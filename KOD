@@ -1,11 +1,13 @@
 #include <iostream>
 #include <ctime>
 
+using namespace std;
+
 void PrintIntroduction(int Difficulty)
 {
     
-    std::cout << "\nPrzed toba serwerownia numer  " << Difficulty;
-    std::cout << "  wpisz poprawne liczby aby wszystkich ocalic\nBedzie do tego potrzebne odnalezienie kilku kodow...";
+    cout << "\nPrzed toba serwerownia numer  " << Difficulty;
+    cout << "  wpisz poprawne liczby aby wszystkich ocalic\nBedzie do tego potrzebne odnalezienie kilku kodow...";
 }
 
 
@@ -20,36 +22,36 @@ bool PlayGame(int Difficulty)
     const int CodeSuma = CodeA + CodeB + CodeC;
     const int CodeMnozenie = CodeA * CodeB * CodeC;
 
-    std::cout << std::endl;
+    cout << std::endl;
 
-    std::cout << "\n+ 3 liczby reprezntuja kod";
-    std::cout << "\n+ Po dodaniu otrzymamy: " << CodeSuma;
-    std::cout << "\n+ Iloczyn tych liczb wynosi: " << CodeMnozenie;
+    cout << "\n+ 3 liczby reprezntuja kod";
+    cout << "\n+ Po dodaniu otrzymamy: " << CodeSuma;
+    cout << "\n+ Iloczyn tych liczb wynosi: " << CodeMnozenie;
     
-    std::cout << std::endl;
+    cout << std::endl;
     
     int GuessA, GuessB, GuessC;
     
-    std::cout << std::endl;
+    cout << std::endl;
 
-    std::cin >> GuessA;
-    std::cin >> GuessB;
-    std::cin >> GuessC;
+    cin >> GuessA;
+    cin >> GuessB;
+    cin >> GuessC;
 
-    std::cout << std::endl;
+    cout << endl;
 
     int GuessSuma = GuessA + GuessB + GuessC;
     int GuessMnozenie = GuessA * GuessB * GuessC;
 
     if(GuessSuma == CodeSuma && GuessMnozenie == CodeMnozenie)
     {
-        std::cout << "!!!UDALO SIE JESTESMY CORAZ BLIZEJ NIE ZATRZYMUJ SIE!!!\n";
+        cout << "!!!UDALO SIE JESTESMY CORAZ BLIZEJ NIE ZATRZYMUJ SIE!!!\n";
         return true;
     }
 
     else
     {
-        std::cout << "!!!NIESTETY TEN KOD JEST BLEDNY NIE PODDAWAJ SIE!!!\n";
+        cout << "!!!NIESTETY TEN KOD JEST BLEDNY NIE PODDAWAJ SIE!!!\n";
         return false;
     }
     
@@ -60,7 +62,7 @@ int main()
 {
     srand(time(NULL));
 
-    std::cout << "\nWitaj agencie mamy dla ciebie zadane ktoremu tylko ty mozesz podolac!!";
+    cout << "\nWitaj agencie mamy dla ciebie zadane ktoremu tylko ty mozesz podolac!!";
     
     int LevelDifficulty = 1;
     int MaxLevel = 6;
@@ -68,8 +70,8 @@ int main()
     while(MaxLevel >= LevelDifficulty)
     {
         bool bLevelComplete = PlayGame(LevelDifficulty);
-        std::cin.clear();
-        std::cin.ignore();
+        cin.clear();
+        cin.ignore();
 
         if(bLevelComplete)
         {
@@ -78,11 +80,11 @@ int main()
 
         if(LevelDifficulty > MaxLevel)
         {
-            std::cout << "\n\n!!!!!!AGENCIE WIEDZIELISMY ZE MOZEMY NA CIEBIE LICZYC!!!!!!\n\n\n";
+            cout << "\n\n!!!!!!AGENCIE WIEDZIELISMY ZE MOZEMY NA CIEBIE LICZYC!!!!!!\n\n\n";
         }
     }
     
-    std::cout << "Swiat jest bezpieczny";
+    cout << "Swiat jest bezpieczny";
 
     return 0;
 }
